@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+    "http://struts.apache.org/dtds/struts-2.0.dtd">
+<struts>
+	<package name="cccda" namespace="/test" extends="struts-default">
+		<action name="MessageAction_*" class="com.neusoft.action.MessageAction" method="{1}">
+			<result name="findAll_success" type="dispatcher">/findMessage.jsp</result>
+			<result name="findAll_error">/msg.jsp</result>
+			<result name="add_success" type="chain">MessageAction_findAll</result>
+			<result name="add_error">/msg.jsp</result>
+		</action>
+	</package>
+</struts>
